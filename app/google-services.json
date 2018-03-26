@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "755352840640",
+    "firebase_url": "https://helpinghands-bec01.firebaseio.com",
+    "project_id": "helpinghands-bec01",
+    "storage_bucket": "helpinghands-bec01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755352840640:android:46bdc808f7259a67",
+        "android_client_info": {
+          "package_name": "co.chatsdk.android.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755352840640-rc18mrjpi7f4lv8do2tacprnvrropkav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwABZhGL5SI38KButLE1lQYBux9jr8hy8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
