@@ -43,7 +43,7 @@ import co.chatsdk.ui.threads.PublicThreadsFragment;
 import co.chatsdk.ui.threads.ThreadDetailsActivity;
 import co.chatsdk.ui.Resources.resourcesFragment;
 import co.chatsdk.ui.Survey.surveyFragment;
-public class BaseInterfaceAdapter implements InterfaceAdapter {
+public class BaseInterfaceAdapter implements InterfaceAdapter  {
 
     public static String USER_ENTITY_ID = "USER_ENTITY_ID";
     public static final String THREAD_ENTITY_ID = "THREAD_ENTITY_ID";
