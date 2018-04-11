@@ -28,7 +28,7 @@ import co.chatsdk.core.events.EventType;
 import co.chatsdk.core.events.NetworkEvent;
 import co.chatsdk.core.interfaces.ThreadType;
 import co.chatsdk.core.session.NM;
-import co.chatsdk.ui.Survey.surveyFragment;
+import co.chatsdk.ui.Survey.surveyActivity;
 import co.chatsdk.ui.helpers.DialogUtils;
 import co.chatsdk.ui.login.LoginActivity;
 import co.chatsdk.ui.manager.InterfaceManager;
@@ -97,7 +97,7 @@ public class PublicThreadsFragment extends BaseFragment {
         if (LoginActivity.isProfessional ==1) {
 
 
-            adapter.onLongClickObservable().subscribe(thread -> ToastHelper.show(getContext(), "Student risk: "+ (surveyFragment.riskScore)));
+            adapter.onLongClickObservable().subscribe(thread -> ToastHelper.show(getContext(), "Student risk: "+ (surveyActivity.riskScore)));
 
 
 
@@ -119,10 +119,11 @@ public class PublicThreadsFragment extends BaseFragment {
         /* Cant use switch in the library*/
         int id = item.getItemId();
 
+
         if (id == R.id.action_chat_sdk_add)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
-            builder.setTitle("Please Enter GTID:");
+            builder.setTitle("Please Enter Display Name:");
 
             // Set up the input
             final EditText input = new EditText(this.getContext());

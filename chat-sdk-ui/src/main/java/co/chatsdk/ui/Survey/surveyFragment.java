@@ -72,7 +72,7 @@ public class surveyFragment extends BaseFragment {
     protected RecyclerView recyclerView;
     protected Button surveyButton;
 
-    public static int riskScore = 3;
+    public double riskScore = surveyActivity.riskScore;
 
 
     protected Disposable listOnClickListenerDisposable;

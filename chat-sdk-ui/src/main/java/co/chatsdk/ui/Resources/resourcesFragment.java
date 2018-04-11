@@ -39,7 +39,7 @@ import timber.log.Timber;
 /**
  * Created by itzik on 6/17/2014.
  */
-public class resourcesFragment extends BaseFragment {
+public class resourcesFragment extends BaseFragment  {
 
     /** Loading all the current user contacts.*/
     public static final int MODE_LOAD_CONTACTS = 1991;

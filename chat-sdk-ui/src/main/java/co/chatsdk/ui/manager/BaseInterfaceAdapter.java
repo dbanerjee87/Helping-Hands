@@ -97,16 +97,20 @@ public class BaseInterfaceAdapter implements InterfaceAdapter  {
         ArrayList<Tab> tabs = new ArrayList<>();
 
         tabs.add(profileTab());
-        tabs.add(publicThreadsTab());
+        //tabs.add(publicThreadsTab());
         //tabs.add(resourcesTab());
 
 
         if (LoginActivity.isProfessional == 1) {
             //tabs.add(publicThreadsTab());
+            tabs.add(publicThreadsTab());
         } else if (LoginActivity.isProfessional!=1) {
             //tabs.add(privateThreadsTab());
-            tabs.add(resourcesTab());
             tabs.add(surveyTab());
+            tabs.add(publicThreadsTab());
+            tabs.add(resourcesTab());
+
+
 
         }
 
