@@ -21,6 +21,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+
 import org.apache.commons.lang3.StringUtils;
 
 import co.chatsdk.core.session.ChatSDK;
@@ -49,6 +51,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     protected EditText usernameEditText;
     protected EditText passwordEditText;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     public static int isProfessional = 0;
 
@@ -188,6 +192,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     /* Dismiss dialog and open main context.*/
     protected void afterLogin() {
+//        DatabaseReference myRef = database.getReference(Uid);
         AppBackgroundMonitor.shared().setEnabled(true);
         InterfaceManager.shared().a.startMainActivity(this);
     }
