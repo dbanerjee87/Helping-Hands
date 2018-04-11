@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -191,8 +192,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     /* Dismiss dialog and open main context.*/
-    protected void afterLogin() {
-//        DatabaseReference myRef = database.getReference(Uid);
+    protected void afterLogin(AccountDetails details) {
+        DatabaseReference myRef = database.getReference(Uid);
         AppBackgroundMonitor.shared().setEnabled(true);
         InterfaceManager.shared().a.startMainActivity(this);
     }
@@ -228,7 +229,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     authenticating = false;
                     dismissProgressDialog();
                 })
-                .subscribe(() -> afterLogin(), e -> {
+                .subscribe(() -> afterLogin(details), e -> {
                     toastErrorMessage(e, false);
                     e.printStackTrace();
                 });
