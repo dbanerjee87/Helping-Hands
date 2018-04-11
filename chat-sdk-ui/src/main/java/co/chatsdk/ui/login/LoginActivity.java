@@ -193,7 +193,22 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     /* Dismiss dialog and open main context.*/
     protected void afterLogin(AccountDetails details) {
-        DatabaseReference myRef = database.getReference(Uid);
+        DatabaseReference myRef = database.getReference(NM.currentUser().getEntityID());
+        String role = myRef.getKey();
+        if (role == null) {
+//            myRef.addListenerForSingleValueEvent();
+            if (details.username.contains("health"))
+                myRef.setValue("professional");
+            else {
+                myRef.setValue("student");
+            }
+        }
+        AppBackgroundMonitor.shared().setEnabled(true);
+        InterfaceManager.shared().a.startMainActivity(this);
+    }
+
+    /* Dismiss dialog and open main context.*/
+    protected void afterLogin() {
         AppBackgroundMonitor.shared().setEnabled(true);
         InterfaceManager.shared().a.startMainActivity(this);
     }
