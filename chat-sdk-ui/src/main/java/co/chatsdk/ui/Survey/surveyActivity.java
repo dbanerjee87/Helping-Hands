@@ -17,6 +17,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.mukesh.countrypicker.CountryPicker;
 import com.mukesh.countrypicker.CountryPickerListener;
 
@@ -51,7 +53,7 @@ import io.reactivex.functions.Consumer;
 
 public class surveyActivity extends BaseActivity {
 
-
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
     private Button surveyButton;
     private EditText s1, s2, s3, s4, s5, s6, s7, s8, s9;
     public static double riskScore = 0.0;
@@ -104,6 +106,9 @@ public class surveyActivity extends BaseActivity {
         } else {
             riskScore = 1.0;
         }
+
+        DatabaseReference myRef = database.getReference(NM.currentUser().getEntityID());
+        myRef.setValue(riskScore);
 
     }
 
