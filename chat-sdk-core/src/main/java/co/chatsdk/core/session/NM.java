@@ -117,4 +117,6 @@ public class NM {
         return NetworkManager.shared().a;
     }
 
+
+
 }

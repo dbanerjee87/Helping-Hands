@@ -1,1 +1,1 @@
-Helping Hands at GT 
+Helping Hands at GT
