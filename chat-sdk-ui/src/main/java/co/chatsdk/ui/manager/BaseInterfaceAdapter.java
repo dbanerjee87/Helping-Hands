@@ -25,6 +25,8 @@ import co.chatsdk.core.interfaces.ChatOptionsDelegate;
 import co.chatsdk.core.interfaces.ChatOptionsHandler;
 import co.chatsdk.core.interfaces.CustomMessageHandler;
 import co.chatsdk.core.session.ChatSDK;
+import co.chatsdk.core.session.NM;
+import co.chatsdk.core.types.AccountDetails;
 import co.chatsdk.core.types.SearchActivityType;
 import co.chatsdk.ui.R;
 import co.chatsdk.ui.chat.ChatActivity;
@@ -101,10 +103,10 @@ public class BaseInterfaceAdapter implements InterfaceAdapter  {
         //tabs.add(resourcesTab());
 
 
-        if (LoginActivity.isProfessional == 1) {
+        if (NM.currentUser().getEmail().contains("health")) {
             //tabs.add(publicThreadsTab());
             tabs.add(publicThreadsTab());
-        } else if (LoginActivity.isProfessional!=1) {
+        } else if (!NM.currentUser().getEmail().contains("health")) {
             //tabs.add(privateThreadsTab());
             tabs.add(surveyTab());
             tabs.add(publicThreadsTab());
@@ -136,7 +138,7 @@ public class BaseInterfaceAdapter implements InterfaceAdapter  {
 
     @Override
     public Tab publicThreadsTab() {
-        if (LoginActivity.isProfessional == 1) {
+        if (NM.currentUser().getEmail().contains("health")) { //LoginActivity.isProfessional == 1
             return new Tab("Chat with Students", R.drawable.icn_100_profile, publicThreadsFragment());
         } else {
             return new Tab("Chat with Professional", R.drawable.icn_100_profile, publicThreadsFragment());

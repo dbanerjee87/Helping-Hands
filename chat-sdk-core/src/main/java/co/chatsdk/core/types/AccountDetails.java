@@ -68,6 +68,10 @@ public class AccountDetails {
         return a;
     }
 
+    public String getuserName() {
+        return username;
+    }
+
     public boolean loginDetailsValid () {
         return username != null && !username.isEmpty() && password != null && !password.isEmpty();
     }
